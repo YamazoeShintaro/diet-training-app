@@ -7,7 +7,7 @@ import { db } from "../../../../firebase";
 import { useAppContext } from "@/context/AppContext";
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import bodyImage from "../../../images/体の部位.webp";
+import bodyImage from "../../../images/bodyPart.webp";
 
 type Inputs = {
     currentWeight: number;

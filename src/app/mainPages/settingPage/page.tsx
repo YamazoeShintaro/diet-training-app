@@ -8,7 +8,7 @@ import React, { useEffect, useState } from "react";
 import { db } from "../../../../firebase";
 import { SubmitHandler, useForm } from "react-hook-form";
 import Image from "next/image";
-import bodyImage from "../../../images/体の部位.webp";
+import bodyImage from "../../../images/bodyPart.webp";
 import { useRouter } from "next/navigation";
 
 type Inputs = {

@@ -7,8 +7,8 @@ import { useAppContext } from "@/context/AppContext";
 import { DocumentData, doc, getDoc } from "firebase/firestore";
 import TopBar from "@/app/components/TopBar";
 import Image from "next/image";
-import bodyImage from "../../../images/体の部位.webp";
-import graph from "../../../images/折れ線グラフ.webp";
+import bodyImage from "../../../images/bodyPart.webp";
+import graph from "../../../images/graph.webp";
 import { useRouter } from "next/navigation";
 
 const Home = () => {

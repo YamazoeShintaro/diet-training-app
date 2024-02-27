@@ -1,5 +1,6 @@
 import { useAppContext } from "@/context/AppContext";
 import Login from "./auth/login/page";
+import Home from "./mainPages/homePage/page";
 
 export default function TrainingApplication() {
   return (

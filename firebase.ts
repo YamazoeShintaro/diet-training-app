@@ -3,7 +3,7 @@ import { getFirestore } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCMTUWWgXpxD3bnT1I1h6EIjQRAHZk1DXk",
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
   authDomain: "diet-traning-app.firebaseapp.com",
   projectId: "diet-traning-app",
   storageBucket: "diet-traning-app.appspot.com",

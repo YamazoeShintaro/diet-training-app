@@ -21,7 +21,7 @@ const Chat = () => {
     const router = useRouter();
 
     const openai = new OpenAI({
-        apiKey: process.env.NEXT_PUBLIC_OPENAI_KEY,
+        apiKey: process.env.PUBLIC_API_KEY,
         dangerouslyAllowBrowser: true,
     });
 

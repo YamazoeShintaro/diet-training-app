@@ -59,7 +59,7 @@ const Setting = () => {
                 <TopBar />
             </div>
 
-            <div className="my-4 flex-grow overflow-y-auto h-screen flex flex-col items-center justify-center">
+            <div className="my-6 flex-grow overflow-y-auto h-screen flex flex-col items-center justify-center">
                 <form
                     onSubmit={handleSubmit(onSubmit)}
                     className="text-slate-50 w-5/6"

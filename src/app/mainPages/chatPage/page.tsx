@@ -21,7 +21,7 @@ type Props = {
     openaiApiKey: string | undefined;
 }
 
-const Chat = ({openaiApiKey}: Props) => {
+export default function Chat({ openaiApiKey }: Props) {
     const router = useRouter();
 
     const openai = new OpenAI({
@@ -247,5 +247,3 @@ const Chat = ({openaiApiKey}: Props) => {
         </div>
     );
 };
-
-export default Chat;

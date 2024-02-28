@@ -17,11 +17,15 @@ type Message = {
     createdAt: Timestamp;
 };
 
-const Chat = () => {
+type Props = {
+    openaiApiKey: string | undefined;
+}
+
+const Chat = ({openaiApiKey}: Props) => {
     const router = useRouter();
 
     const openai = new OpenAI({
-        apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY,
+        apiKey: openaiApiKey,
         dangerouslyAllowBrowser: true,
     });
 

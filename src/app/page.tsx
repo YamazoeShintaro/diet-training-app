@@ -1,6 +1,17 @@
 import { useAppContext } from "@/context/AppContext";
 import Login from "./auth/login/page";
 import Home from "./mainPages/homePage/page";
+// import { GetServerSideProps } from "next";
+
+// export const getServerSideProps: GetServerSideProps = async() => {
+//   const openaiApiKey = process.env.NEXT_PUBLIC_OPENAI_API_KEY;
+
+//   return {
+//       props: {
+//           openaiApiKey,
+//       }
+//   };
+// };
 
 export default function TrainingApplication() {
   return (

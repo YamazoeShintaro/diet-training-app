@@ -10,6 +10,7 @@ import BottomMenu from "@/app/components/BottomMenu";
 import LoadingIcons from 'react-loading-icons'
 import TopBar from "@/app/components/TopBar";
 import { useRouter } from "next/navigation";
+import { GetServerSideProps } from "next";
 
 type Message = {
     text: String;
@@ -17,15 +18,25 @@ type Message = {
     createdAt: Timestamp;
 };
 
-type ApiProps = {
-    openaiApiKey: string | undefined;
-};
+// type ApiProps = {
+//     openaiApiKey: string | undefined;
+// };
 
-export default function Chat({ openaiApiKey }: ApiProps) {
+// export const getServerSideProps: GetServerSideProps = async() => {
+//     const openaiApiKey = process.env.NEXT_PUBLIC_OPENAI_API_KEY;
+
+//     return {
+//         props: {
+//             openaiApiKey,
+//         }
+//     };
+// };
+
+export default function ChatPage(props: any) {
     const router = useRouter();
 
     const openai = new OpenAI({
-        apiKey: openaiApiKey,
+        apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY,
         dangerouslyAllowBrowser: true,
     });
 

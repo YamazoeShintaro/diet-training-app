@@ -17,11 +17,11 @@ type Message = {
     createdAt: Timestamp;
 };
 
-type Props = {
+type ApiProps = {
     openaiApiKey: string | undefined;
-}
+};
 
-export default function Chat({ openaiApiKey }: Props) {
+export default function Chat({ openaiApiKey }: ApiProps) {
     const router = useRouter();
 
     const openai = new OpenAI({

@@ -25,13 +25,21 @@ const Timer = () => {
     const restTime: number = Number(restTimeString);
     const repeatCount: number = Number(repeatCountString);
 
+    // console.log(commitTime, restTime, repeatCount);
+
     // タイマーを稼働する総時間を計算（単位は"秒"）
     const initialCount = (commitTime * repeatCount) + (restTime * (repeatCount - 1));
+
+    // console.log(initialCount);
 
     const [count, setCount] = useState<number>(initialCount);
     const [isRunning, setIsRunning] = useState<boolean>(false);
     const [display, setDisplay] = useState<string>("開始前");
     const [triviaNum, setTriviaNum] = useState<number | undefined>();
+
+    useEffect(() => {
+        setCount(initialCount);
+    }, [initialCount])
 
     // // "勉強に入る時"と"休憩に入る時"で２種類の音を用意
     // const startTimer = new Audio(startSound);
@@ -42,10 +50,13 @@ const Timer = () => {
     const reset = () => {
         setCount(initialCount);
         setIsRunning(false);
+        setDisplay("開始前");
     };
     const tick = () => {
         if (count > 0) setCount((prevCount) => prevCount - 1);
     };
+
+    // console.log(count);
 
     useEffect(() => {
         let timerId: any;
@@ -253,8 +264,8 @@ const Timer = () => {
                 </div>
                 {/*-------------------------------------------------------------------------------------------------------------------*/}
 
-                {/* タイマー作動中は非表示にする */}
-                {!isRunning &&
+                {/* タイマー作動中、もしくは一時停止中は非表示にする */}
+                {!isRunning && count === initialCount &&
                     <div className="fixed bottom-12 left-0 right-0 z-30 px-1 pb-0.5">
                         <div
                             className="bg-slate-300 text-black text-xs py-1 flex-shrink-0 relative border border-slate-100 rounded w-full focus:outline-none py-1"

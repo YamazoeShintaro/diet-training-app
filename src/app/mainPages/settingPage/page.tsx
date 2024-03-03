@@ -9,7 +9,6 @@ import { db } from "../../../../firebase";
 import { SubmitHandler, useForm } from "react-hook-form";
 import Image from "next/image";
 import bodyImage from "../../../images/bodyPart.webp";
-import { useRouter } from "next/navigation";
 
 type Inputs = {
     currentWeight: number;
@@ -21,18 +20,11 @@ type Inputs = {
 };
 
 const Setting = () => {
-    const router = useRouter();
-
     const { userId, currentUserInfo } = useAppContext();
-    // const [ currentUserInfo, setCurrentUserInfo ] = useState<DocumentData>();
     const [ bodyPart, setBodyPart ] = useState(currentUserInfo?.bodyPart);
     const [ gender, setGender ] = useState(currentUserInfo?.gender);
 
     const { register, handleSubmit, formState: { errors } } = useForm<Inputs>();
-
-    // if(!userId) {
-    //     router.push("/auth/login");
-    // }
 
     const onSubmit: SubmitHandler<Inputs> = (data) => {
         const input = {
@@ -40,9 +32,6 @@ const Setting = () => {
             name: data.name,
             currentWeight: data.currentWeight,
             goalWeight: data.goalWeight,
-            // commitTime: currentUserInfo?.commitTime,
-            // restTime: currentUserInfo?.restTime,
-            // repeatCount: currentUserInfo?.repeatCount,
             bodyPart: bodyPart,
             gender: gender,
             height: data.height,

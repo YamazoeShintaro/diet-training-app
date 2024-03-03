@@ -27,19 +27,12 @@ const InitialSetting = () => {
     const [ bodyPart, setBodyPart ] = useState("お腹");
     const [ gender, setGender ] = useState("男性");
 
-    // if(!userId) {
-    //     router.push("/auth/login");
-    // }
-
     const onSubmit: SubmitHandler<Inputs> = (data) => {
         setDoc(doc(db, "users", userId!), {
             currentWeight: data.currentWeight,
             goalWeight: data.goalWeight,
             bodyPart: bodyPart,
             name: data.name,
-            // commitTime: "30",
-            // restTime: "10",
-            // repeatCount: "3",
             userId: userId,
             gender: gender,
             height: data.height,
@@ -56,7 +49,7 @@ const InitialSetting = () => {
                 </p>
             </div>
 
-            <div className="mt-10 flex-grow overflow-y-auto h-screen flex flex-col items-center justify-center">
+            <div className="mt-16 flex-grow overflow-y-auto h-screen flex flex-col items-center justify-center">
                 <form
                     onSubmit={handleSubmit(onSubmit)}
                     className="text-slate-50 w-5/6"

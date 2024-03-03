@@ -16,9 +16,6 @@ export default function Trivia({triviaNum}: TriviaNum) {
 
     return (
         <div className="relative">
-            {/* <div className="absolute left-7 -top-3">
-                <Image src={TriviaImage} alt="" width={30} height={30}/>
-            </div> */}
             <p className="bg-slate-300 text-black border-2 border-slate-100 rounded-md text-sm mb-4 mx-10 px-1.5 py-1.5 max-w-lg flex justify-center">
                 {/* 受け取った0~9の乱数番目の雑学を表示 */}
                 {triviaBox[triviaNum!]}

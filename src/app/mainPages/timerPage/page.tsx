@@ -3,8 +3,6 @@
 import BottomMenu from "@/app/components/BottomMenu";
 import TopBar from "@/app/components/TopBar";
 import React, { useEffect, useState } from "react";
-import { db } from "../../../../firebase";
-// import TimerSection from "../../components/TimerSection";
 import { SubmitHandler, useForm } from "react-hook-form";
 import Trivia from "@/app/components/Trivia";
 
@@ -25,12 +23,8 @@ const Timer = () => {
     const restTime: number = Number(restTimeString);
     const repeatCount: number = Number(repeatCountString);
 
-    // console.log(commitTime, restTime, repeatCount);
-
     // タイマーを稼働する総時間を計算（単位は"秒"）
     const initialCount = (commitTime * repeatCount) + (restTime * (repeatCount - 1));
-
-    // console.log(initialCount);
 
     const [count, setCount] = useState<number>(initialCount);
     const [isRunning, setIsRunning] = useState<boolean>(false);
@@ -55,8 +49,6 @@ const Timer = () => {
     const tick = () => {
         if (count > 0) setCount((prevCount) => prevCount - 1);
     };
-
-    // console.log(count);
 
     useEffect(() => {
         let timerId: any;
@@ -255,11 +247,6 @@ const Timer = () => {
                                 onClick={() => reset()}
                             >リセット</div>
                         </div>
-                        {/* <p style={{ borderColor: "#101841" }} className="text-xs border-b pb-2 px-6 mx-2">
-                            <SoundWarningIcon style={{ fontSize: 16, color: "#f6d60f" }} />
-                            音が出ますので音量にご注意ください
-                            <SoundWarningIcon style={{ fontSize: 16, color: "#f6d60f" }} />
-                        </p> */}
                     </div>
                 </div>
                 {/*-------------------------------------------------------------------------------------------------------------------*/}
@@ -269,7 +256,6 @@ const Timer = () => {
                     <div className="fixed bottom-12 left-0 right-0 z-30 px-1 pb-0.5">
                         <div
                             className="bg-slate-300 text-black text-xs py-1 flex-shrink-0 relative border border-slate-100 rounded w-full focus:outline-none py-1"
-                            // onSubmit={handleSubmit(onSubmit)}
                         >
                             <div className="flex justify-center py-1">
                                 <div className="mb-0.5">
@@ -330,15 +316,6 @@ const Timer = () => {
                                     <label> セット 】</label>
                                 </div>
                             </div>
-                            {/* <div className="flex justify-end">
-                                <button
-                                    type="submit"
-                                    className="text-small-2 bg-blue-500 text-white font-medium mr-2 my-6 px-3 rounded hover:bg-blue-700"
-                                    // onClick={() => setTimer()}
-                                >
-                                    タイマーをセット
-                                </button>
-                            </div> */}
                         </div>
                     </div>
                 }

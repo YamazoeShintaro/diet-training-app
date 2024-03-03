@@ -23,7 +23,6 @@ const Register =  () => {
     const onSubmit: SubmitHandler<Inputs> = async (data) => {
         await createUserWithEmailAndPassword(auth, data.email, data.password)
             .then((userCredential) => {
-                // const user = userCredential.user;
                 signInWithEmailAndPassword(auth, data.email, data.password)
                     .then(() => {
                         setDoc(doc(db, "users", userCredential.user.uid), {
@@ -31,9 +30,6 @@ const Register =  () => {
                             goalWeight: "50",
                             bodyPart: "お腹",
                             name: "未設定",
-                            // commitTime: "30",
-                            // restTime: "10",
-                            // repeatCount: "3",
                             userId: userId,
                             height: "170",
                             gender: "男性",

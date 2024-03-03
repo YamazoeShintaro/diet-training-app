@@ -18,20 +18,6 @@ type Message = {
     createdAt: Timestamp;
 };
 
-// type ApiProps = {
-//     openaiApiKey: string | undefined;
-// };
-
-// export const getServerSideProps: GetServerSideProps = async() => {
-//     const openaiApiKey = process.env.NEXT_PUBLIC_OPENAI_API_KEY;
-
-//     return {
-//         props: {
-//             openaiApiKey,
-//         }
-//     };
-// };
-
 export default function ChatPage(props: any) {
     const router = useRouter();
 

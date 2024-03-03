@@ -15,17 +15,6 @@ type AppContextType = {
     currentUserInfo: DocumentData | undefined;
 };
 
-type CurrentUserInfo = {
-    userId: number;
-    name: string;
-    currentWeight: number;
-    goalWeight: number;
-    commitTime: number;
-    restTime: number;
-    repeatCount: number;
-    bodyPart: string;
-};
-
 const defaultContextData = {
     userId: null,
     currentUserInfo: undefined,

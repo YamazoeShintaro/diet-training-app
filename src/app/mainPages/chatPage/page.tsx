@@ -31,7 +31,7 @@ export default function ChatPage(props: any) {
 
     const scrollBottomRef = useRef<HTMLDivElement>(null);
 
-    //ログイン中のユーザーのメッセージを取得
+    // ログイン中のユーザーのメッセージを取得
     useEffect(() => {
         if(userId) {
             const fetchMessages = async () => {

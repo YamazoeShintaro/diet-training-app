@@ -9,8 +9,6 @@ import OpenAI from "openai";
 import BottomMenu from "@/app/components/BottomMenu";
 import LoadingIcons from 'react-loading-icons'
 import TopBar from "@/app/components/TopBar";
-import { useRouter } from "next/navigation";
-import { GetServerSideProps } from "next";
 
 type Message = {
     text: String;
@@ -19,8 +17,6 @@ type Message = {
 };
 
 export default function ChatPage(props: any) {
-    const router = useRouter();
-
     const openai = new OpenAI({
         apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY,
         dangerouslyAllowBrowser: true,
@@ -34,10 +30,6 @@ export default function ChatPage(props: any) {
     const [ timeForm, setTimeForm ] = useState("30");
 
     const scrollBottomRef = useRef<HTMLDivElement>(null);
-
-    // if(!userId) {
-    //     router.push("/auth/login");
-    // }
 
     //ログイン中のユーザーのメッセージを取得
     useEffect(() => {
@@ -94,8 +86,6 @@ export default function ChatPage(props: any) {
                     また、それぞれのトレーニングメニューの下に、意識するポイントを簡単に書いてください。
                 `;
 
-            console.log(createSendMessage);
-
             //ユーザーメッセージをdbに保存
             const userDocRef = doc(db, "users", userId!);
             const messageCollectionRef = collection(userDocRef, "messages");
@@ -133,8 +123,6 @@ export default function ChatPage(props: any) {
                     トレーニングメニューの横に（）で時間配分をつけてください。
                     また、それぞれのトレーニングメニューの下に、意識するポイントを簡単に書いてください。
                 `;
-
-            console.log(createSendMessage);
 
             //ユーザーメッセージをdbに保存
             const userDocRef = doc(db, "users", userId!);

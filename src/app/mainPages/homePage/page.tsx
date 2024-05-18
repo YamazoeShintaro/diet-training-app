@@ -38,19 +38,11 @@ const Home = () => {
             </div>
 
             <div className="flex-grow overflow-y-auto mt-11 mb-12 px-4">
-                <div className="mb-4">
-                    <Image src={graph} alt="体重の推移" />
-                </div>
-
                 <div className="text-slate-50 text-sm px-5">
                     <p className="mb-1.5">・目標体重：{currentUserInfo?.goalWeight} kg</p>
                     <p className="mb-1.5">・現在の体重：{currentUserInfo?.currentWeight} kg</p>
                     <p className="mb-1.5">・身長：{currentUserInfo?.height} cm</p>
                     <p className="mb-3">・脂肪を落としたい部位：{currentUserInfo?.bodyPart}</p>
-                </div>
-
-                <div className="px-10">
-                    <Image src={bodyImage} alt="体の部位の画像" />
                 </div>
             </div>
 

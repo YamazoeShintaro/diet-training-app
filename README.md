@@ -6,7 +6,7 @@ Email : sample@sample.com
 
 Password : sample1234
 
-↑登録が面倒な方は、こちらのIDとパスワードでログインしてみてください。
+↑登録が面倒な方は、こちらのEmailとPasswordでログインしてみてください。
 
 ## アプリイメージ
 <img width="951" alt="ポートフォリオ (1)" src="https://github.com/YamazoeShintaro/diet-training-app/assets/154324882/5e9a7ecb-475b-41d3-81e6-7aea54e3750b">

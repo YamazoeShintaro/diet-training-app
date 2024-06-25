@@ -1,5 +1,8 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## アプリイメージ
+<img width="951" alt="ポートフォリオ (1)" src="https://github.com/YamazoeShintaro/diet-training-app/assets/154324882/5e9a7ecb-475b-41d3-81e6-7aea54e3750b">
+
 ## Getting Started
 
 First, run the development server:
